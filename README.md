@@ -53,12 +53,21 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 ```
 
-### 4. Start the server
+## 4. Database Schema
+
+The full database schema is available in [`schema/schema.sql`](./schema/schema.sql).  
+To set up your MySQL database, run:
+
+```bash
+mysql -u your_mysql_user -p your_database_name < schema/schema.sql
+```
+
+### 5. Start the server
 ```bash
 node app.js
 ```
 
-### 5. Access locally
+### 6. Access locally
 Visit: http://localhost:3000
 
 ## 📁 Folder Structure
