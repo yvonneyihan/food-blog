@@ -137,12 +137,11 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-<<<<<<< HEAD
 
 public/uploads/
 
 *.sqlite
 *.sqlite3
 *.db
-=======
->>>>>>> 994af47e610bcff38ebb94e20c9166aae423803d
+
+.DS_Store
