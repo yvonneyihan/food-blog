@@ -9,6 +9,8 @@ import './config/auth.js';
 import authRoutes from './routes/auth.js';
 import usersRouter from './routes/users.js';
 import pool from './db.js';
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -23,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(session({
-  secret: 'your_secret',
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false
 }));
