@@ -238,30 +238,122 @@ h1, h2, h3 {
     font-family: "Open Sans", sans-serif;
 }
 
-.compose-container {
-    display: flex;
-    flex-direction: column;
-    align-items: start; 
-    text-align: left;
-    margin: 20px;
+.compose-card {
+    background: white;
+    border: 3px solid #DCA47C;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
-.compose-container form{
-    margin-top: 20px;
+.compose-heading {
     font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
+    font-weight: 700;
+    color: #1A5319;
 }
 
-.publish {
-    margin-left: 10px;
+.compose-form {
+    font-family: "Open Sans", sans-serif;
 }
 
-#title {
-    width: 50vw;
+.compose-input,
+.compose-select,
+.compose-textarea {
+    border: 2px solid #DCA47C;
+    border-radius: 10px;
+    padding: 12px;
+    background-color: #fffdf9;
 }
 
+.compose-input:focus,
+.compose-select:focus,
+.compose-textarea:focus {
+    border-color: #1A5319;
+    box-shadow: 0 0 0 0.15rem rgba(26, 83, 25, 0.15);
+}
+
+#title,
 #content {
-    width: 50vw;
-    height: 40vh;
+    width: 100%;
+}
+
+.compose-textarea {
+    min-height: 260px;
+    resize: vertical;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.ai-generate-btn {
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px 14px;
+    border: 3px solid #1A5319;
+    background: white;
+    color: #1A5319;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.ai-generate-btn:hover {
+    background-color: #1A5319;
+    color: white;
+}
+
+.ai-generate-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.image-preview-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+    border: 2px dashed #DCA47C;
+    border-radius: 12px;
+    background: #fffdf9;
+    padding: 16px;
+}
+
+#imagePreview {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 12px;
+    display: block;
+}
+
+.publish-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.publish-btn {
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    width: 180px;
+    height: 48px;
+    border: 3px solid #1A5319;
+    background: white;
+    color: #1A5319;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.publish-btn:hover {
+    background-color: #1A5319;
+    color: white;
 }
 
