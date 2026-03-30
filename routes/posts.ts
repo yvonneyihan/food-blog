@@ -50,10 +50,14 @@ router.post("/compose", upload.single('image'), async (req: Request, res: Respon
   let imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
   const userId = req.session.userId
   // console.log(userId)
+  if (!userId) {
+    res.status(401).send("You must be logged in to create a post.");
+    return;
+  }
 
   try {
     await pool.query<ResultSetHeader>(
-    'INSERT INTO Posts (user_Id, title, content, category, image_url) VALUES (?, ?, ?, ?, ?)',
+    'INSERT INTO Posts (user_id, title, content, category, image_url) VALUES (?, ?, ?, ?, ?)',
     [userId, title, content, category, imageUrl]
     );
     res.redirect("/posts");
