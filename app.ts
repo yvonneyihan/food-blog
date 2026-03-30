@@ -8,6 +8,7 @@ import passport from 'passport';
 import './config/auth.js'; 
 import authRoutes from './routes/auth.js';
 import usersRouter from './routes/users.js';
+import aiRoutes from "./routes/ai.js";
 import pool from './db.js';
 import dotenv from "dotenv";
 import { testDBConnection } from "./db.js";
@@ -31,7 +32,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.json());
 
 app.use(session({
   secret: sessionSecret,
@@ -50,6 +51,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use('/auth', authRoutes);
 app.use('/posts', postsRouter);
 app.use('/users', usersRouter);
+app.use('/api/ai', aiRoutes);
 
 // Home route
 app.get("/", async(req: Request, res: Response) => {
